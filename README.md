@@ -1,6 +1,12 @@
 # toyama_pre_app
 
-A new Flutter project.
+富山県立大学公式アプリを非公式で作成しよう活動
+
+1.サークル紹介機能
+2.バス時刻表
+3.電車時刻表示機能
+4.イベント情報
+5.データ収集
 
 ## Getting Started
 
