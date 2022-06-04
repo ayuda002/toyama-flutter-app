@@ -2,13 +2,8 @@ import 'package:flutter/material.dart';
 // Uncomment lines 7 and 10 to view the visual layout at runtime.
 // import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
-void main() {
-  // debugPaintSizeEnabled = true;
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Circle extends StatelessWidget {
+  const Circle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -332,11 +327,11 @@ class MyApp extends StatelessWidget {
                   width: 35,
                   fit: BoxFit.cover,
                 ),
-                Image(
-                  image: AssetImage('images/instagram_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
+                // Image(
+                //   image: AssetImage('images/instagram_icon.png'),
+                //   width: 35,
+                //   fit: BoxFit.cover,
+                // ),
               ],
             ),
 

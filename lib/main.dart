@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'circle_info.dart';
+import 'tpu_bus.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -211,7 +213,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               onPrimary: Colors.lightBlue,
                               // elevation: 10,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TpuBus()),
+                              );
+                            },
                           ),
                         ),
                         //Q&A
@@ -276,7 +284,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w700),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Circle()),
+                          );
+                        },
                       ),
                     ),
                     Container(
@@ -355,7 +368,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: EdgeInsets.all(10),
                             ),
                             onPressed: () {},
-                            child: FaIcon(FontAwesomeIcons.twitter),
+                            child: Icon(Icons.sunny, color: Colors.white),
                           ),
                         ),
                       ],
