@@ -74,6 +74,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Widget _button() {
+    return Container(
+      padding: EdgeInsets.all(5),
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.redAccent,
+      ),
+      child: Icon(Icons.map_outlined, color: Colors.white),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -119,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         leading: Icon(Icons.add),
                         title: Text('Pick UP'),
                         subtitle: Text(
-                          'Card SubTitle',
+                          "授業料免除申請",
                           style: TextStyle(
                               fontSize: 20,
                               // fontWeight: FontWeight.w700,
@@ -152,15 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.redAccent,
-                                  ),
-                                  child: Icon(Icons.map_outlined,
-                                      color: Colors.white),
-                                ),
+                                _button(),
                                 Text(
                                   'Map',
                                   style: TextStyle(

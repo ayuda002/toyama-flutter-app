@@ -4,31 +4,13 @@ import 'package:flutter/material.dart';
 import 'bus/four_page.dart';
 import 'bus/one_page.dart';
 
-class TpuBus extends StatelessWidget {
+class TpuBus extends StatefulWidget {
   const TpuBus({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+  State<TpuBus> createState() => _TpuBusState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _TpuBusState extends State<TpuBus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

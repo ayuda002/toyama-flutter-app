@@ -104,251 +104,248 @@ class Circle extends StatelessWidget {
       ),
     );
 
-    return MaterialApp(
-      title: 'Flutter layout demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'サークル紹介',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 21,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'サークル紹介',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 21,
+          ),
+        ),
+        backgroundColor: const Color(0xFF2ca9e1),
+      ),
+      body: ListView(
+        children: [
+          // Image.asset(
+          //   'images/lake.jpg',
+          //   width: 600,
+          //   height: 240,
+          //   fit: BoxFit.cover,
+          // ),
+          const Center(
+            child: Text(
+              "1.学生会 兼 大学祭実行委員会",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
+              ),
             ),
           ),
-          backgroundColor: const Color(0xFF2ca9e1),
-        ),
-        body: ListView(
-          children: [
-            // Image.asset(
-            //   'images/lake.jpg',
-            //   width: 600,
-            //   height: 240,
-            //   fit: BoxFit.cover,
-            // ),
-            const Center(
-              child: Text(
-                "1.学生会 兼 大学祭実行委員会",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          const Image(image: AssetImage('images/001.png')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Image(
+                image: AssetImage('images/twitter_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+              Image(
+                image: AssetImage('images/web_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+              Image(
+                image: AssetImage('images/instagram_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
+
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
+
+          const Center(
+            child: Text(
+              "2.T. C. C. (Technical Computer Club)",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
               ),
             ),
-            const Image(image: AssetImage('images/001.png')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Image(
-                  image: AssetImage('images/twitter_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-                Image(
-                  image: AssetImage('images/web_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-                Image(
-                  image: AssetImage('images/instagram_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
+          ),
+          const Image(image: AssetImage('images/002.png')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Image(
+                image: AssetImage('images/twitter_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
 
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
 
-            const Center(
-              child: Text(
-                "2.T. C. C. (Technical Computer Club)",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          const Center(
+            child: Text(
+              "3.軽音楽部",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
               ),
             ),
-            const Image(image: AssetImage('images/002.png')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Image(
-                  image: AssetImage('images/twitter_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
+          ),
+          const Image(image: AssetImage('images/003.png')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Image(
+                image: AssetImage('images/twitter_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
 
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
 
-            const Center(
-              child: Text(
-                "3.軽音楽部",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          const Center(
+            child: Text(
+              "4.バドミントン部",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
               ),
             ),
-            const Image(image: AssetImage('images/003.png')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Image(
-                  image: AssetImage('images/twitter_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
+          ),
+          const Image(image: AssetImage('images/004.png')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Image(
+                image: AssetImage('images/twitter_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+              Image(
+                image: AssetImage('images/instagram_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
 
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
 
-            const Center(
-              child: Text(
-                "4.バドミントン部",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          const Center(
+            child: Text(
+              "5.バレーボール部",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
               ),
             ),
-            const Image(image: AssetImage('images/004.png')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Image(
-                  image: AssetImage('images/twitter_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-                Image(
-                  image: AssetImage('images/instagram_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
+          ),
+          const Image(image: AssetImage('images/005.png')),
 
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
 
-            const Center(
-              child: Text(
-                "5.バレーボール部",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          const Center(
+            child: Text(
+              "6.スキー部",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
               ),
             ),
-            const Image(image: AssetImage('images/005.png')),
+          ),
+          const Image(image: AssetImage('images/006.png')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Image(
+                image: AssetImage('images/twitter_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+              Image(
+                image: AssetImage('images/instagram_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
 
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
 
-            const Center(
-              child: Text(
-                "6.スキー部",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          const Center(
+            child: Text(
+              "7.サッカー部",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 21,
               ),
             ),
-            const Image(image: AssetImage('images/006.png')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Image(
-                  image: AssetImage('images/twitter_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-                Image(
-                  image: AssetImage('images/instagram_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
-
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
-
-            const Center(
-              child: Text(
-                "7.サッカー部",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 21,
-                ),
+          ),
+          const Image(image: AssetImage('images/007.jpg')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Image(
+                image: AssetImage('images/twitter_icon.png'),
+                width: 35,
+                fit: BoxFit.cover,
               ),
-            ),
-            const Image(image: AssetImage('images/007.jpg')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Image(
-                  image: AssetImage('images/twitter_icon.png'),
-                  width: 35,
-                  fit: BoxFit.cover,
-                ),
-                // Image(
-                //   image: AssetImage('images/instagram_icon.png'),
-                //   width: 35,
-                //   fit: BoxFit.cover,
-                // ),
-              ],
-            ),
+              // Image(
+              //   image: AssetImage('images/instagram_icon.png'),
+              //   width: 35,
+              //   fit: BoxFit.cover,
+              // ),
+            ],
+          ),
 
-            const Divider(
-              color: Colors.black,
-              thickness: 1,
-              height: 30,
-              indent: 5,
-              endIndent: 5,
-            ),
+          const Divider(
+            color: Colors.black,
+            thickness: 1,
+            height: 30,
+            indent: 5,
+            endIndent: 5,
+          ),
 
-            titleSection,
-            buttonSection,
-            textSection,
-            circleInfo,
-          ],
-        ),
+          titleSection,
+          buttonSection,
+          textSection,
+          circleInfo,
+        ],
       ),
     );
   }
