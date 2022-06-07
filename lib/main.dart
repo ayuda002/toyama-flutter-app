@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'circle_info.dart';
 import 'tpu_bus.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       label: 'ホーム',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.notifications),
+      icon: Icon(Icons.home),
       label: '新入生',
     ),
     BottomNavigationBarItem(
@@ -338,10 +338,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(20),
                             ),
                             onPressed: () {},
-                            child: Icon(Icons.sunny, color: Colors.white),
+                            child: Icon(FontAwesomeIcons.instagram),
                           ),
                         ),
                         Container(
@@ -353,10 +353,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(20),
                             ),
                             onPressed: () {},
-                            child: Icon(Icons.sunny, color: Colors.white),
+                            child: Icon(FontAwesomeIcons.chrome),
                           ),
                         ),
                         Container(
@@ -368,10 +368,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: CircleBorder(),
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(20),
                             ),
                             onPressed: () {},
-                            child: Icon(Icons.sunny, color: Colors.white),
+                            child: FaIcon(FontAwesomeIcons.twitter),
                           ),
                         ),
                       ],
@@ -382,14 +382,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-
         bottomNavigationBar: BottomNavigationBar(
           items: _bottomNavItems,
           onTap: _onItemTapped,
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.lightBlue,
           unselectedItemColor: Colors.grey,
-        ), // This trailing comma makes auto-formatting nicer for build methods.
+        ),
       ),
     );
   }
