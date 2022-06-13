@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'circle_info.dart';
 import 'tpu_bus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,13 +62,17 @@ class _MyHomePageState extends State<MyHomePage> {
       label: 'ホーム',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      label: '新入生',
+      icon: Icon(Icons.apps),
+      label: 'アプリ',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.person),
-      label: 'プロフィール',
+      icon: Icon(Icons.assignment),
+      label: 'アンケート',
     ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.account_box),
+      label: 'プロフィール',
+    )
   ];
 
   void _onItemTapped(int index) {
@@ -74,14 +81,86 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  Widget _button() {
+  //button_iconコンポーネント
+  Widget _button_icon(var icon, var color) {
     return Container(
       padding: EdgeInsets.all(5),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.redAccent,
+        color: color,
       ),
-      child: Icon(Icons.map_outlined, color: Colors.white),
+      child: Icon(icon, color: Colors.white),
+    );
+  }
+
+  //buttonコンポーネント
+  Widget _button(icon, color, text, next) {
+    return Container(
+      width: 100, //横幅
+      height: 100, //高さ
+      child: ElevatedButton(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            _button_icon(icon, color),
+            Text(
+              text,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
+        style: ElevatedButton.styleFrom(
+          side: BorderSide(
+            color: Colors.white, //色
+            width: 2, //太さ
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          primary: Colors.white,
+          onPrimary: color,
+          // elevation: 10,
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => next),
+          );
+        },
+      ),
+    );
+  }
+
+  //
+  Widget _intro(name, icon, next) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.9, //横幅
+      height: 50, //高さ
+      child: ElevatedButton.icon(
+        icon: Icon(
+          icon,
+          color: Colors.white,
+        ),
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          primary: Colors.lightBlue,
+          onPrimary: Colors.white,
+          alignment: Alignment.centerLeft,
+          // elevation: 10,
+        ),
+        label: Text(
+          name,
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => next),
+          );
+        },
+      ),
     );
   }
 
@@ -156,107 +235,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         //Mapボタン
-                        Container(
-                          width: 100, //横幅
-                          height: 100, //高さ
-                          child: ElevatedButton(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                _button(),
-                                Text(
-                                  'Map',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              side: BorderSide(
-                                color: Colors.white, //色
-                                width: 2, //太さ
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              primary: Colors.white,
-                              onPrimary: Colors.redAccent,
-                              // elevation: 10,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
+                        _button(Icons.map_outlined, Colors.redAccent, "Map",
+                            Test()),
                         //Busボタン
-                        Container(
-                          width: 100, //横幅
-                          height: 100, //高さ
-                          child: ElevatedButton(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Icon(Icons.bus_alert_outlined),
-                                Text(
-                                  'Bus',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              side: BorderSide(
-                                color: Colors.lightBlue, //色
-                                width: 2, //太さ
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              primary: Colors.white,
-                              onPrimary: Colors.lightBlue,
-                              // elevation: 10,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TpuBus()),
-                              );
-                            },
-                          ),
-                        ),
+                        _button(Icons.bus_alert_outlined, Colors.lightBlue,
+                            "Bus", TpuBus()),
                         //Q&A
-                        Container(
-                          width: 100, //横幅
-                          height: 100, //高さ
-                          child: ElevatedButton(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Icon(Icons.question_answer_outlined),
-                                Text(
-                                  'Q&A',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              side: BorderSide(
-                                color: Color.fromARGB(255, 248, 173, 75), //色
-                                width: 2, //太さ
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              primary: Colors.white,
-                              onPrimary: Color.fromARGB(255, 248, 173, 75),
-                              // elevation: 10,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
+                        _button(Icons.question_answer_outlined,
+                            Color.fromARGB(255, 248, 173, 75), "Q&A", Test()),
                       ],
                     ),
                     Container(
@@ -265,68 +251,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       // 外側の余白（マージン）
                       margin: EdgeInsets.all(4),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.9, //横幅
-                      height: 50, //高さ
-                      child: ElevatedButton.icon(
-                        icon: const Icon(
-                          Icons.tag_faces,
-                          color: Colors.white,
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          primary: Colors.lightBlue,
-                          onPrimary: Colors.white,
-                          alignment: Alignment.centerLeft,
-                          // elevation: 10,
-                        ),
-                        label: const Text(
-                          'サークル&学生団体 紹介',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Circle()),
-                          );
-                        },
-                      ),
-                    ),
+                    _intro('サークル&学生団体 紹介', Icons.whatshot, Circle()),
                     Container(
                       // 内側の余白（パディング）
                       padding: EdgeInsets.all(4),
                       // 外側の余白（マージン）
                       margin: EdgeInsets.all(4),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.9, //横幅
-                      height: 50, //高さ
-                      child: ElevatedButton.icon(
-                        icon: const Icon(
-                          Icons.sunny,
-                          color: Colors.white,
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          primary: Colors.lightBlue,
-                          onPrimary: Colors.white,
-                          alignment: Alignment.centerLeft,
-                          // elevation: 10,
-                        ),
-                        label: const Text(
-                          'イベント紹介',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700),
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-
+                    _intro('イベント紹介', Icons.sunny, Circle()),
                     //SNSボタン
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -355,7 +287,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               shape: CircleBorder(),
                               padding: EdgeInsets.all(20),
                             ),
-                            onPressed: () {},
+                            onPressed: () async {
+                              const url = "http://polygon.pu-toyama.ac.jp/";
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
                             child: Icon(FontAwesomeIcons.chrome),
                           ),
                         ),
@@ -370,7 +309,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               shape: CircleBorder(),
                               padding: EdgeInsets.all(20),
                             ),
-                            onPressed: () {},
+                            onPressed: () async {
+                              const url = "https://twitter.com/st_DXcenter";
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
                             child: FaIcon(FontAwesomeIcons.twitter),
                           ),
                         ),
