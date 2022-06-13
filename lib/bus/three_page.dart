@@ -5,7 +5,10 @@ class ThreePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("射水キャンパス発着運行ダイヤ"),
+        title: const Text("射水キャンパス発着運行ダイヤ",style: TextStyle(
+            color: Colors.lightBlue, fontWeight: FontWeight.w700)),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.lightBlue),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -692,6 +695,17 @@ class ThreePage extends StatelessWidget {
                     style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ]),
+              ),
+              RichText(
+                text: const TextSpan(
+                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  children: [
+                    TextSpan(
+                        text: "緑色",
+                        style: TextStyle(backgroundColor: Colors.lightGreenAccent)),
+                    TextSpan(text: "は射水市コミュニティバスのため最新の運行状況についてはHPを確認ください"),
+                  ],
+                ),
               ),
             ],
           ),
