@@ -5,8 +5,11 @@ class OnePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("射水キャンパス発着運行ダイヤ"),
-      ),
+        title: const Text("射水キャンパス発着運行ダイヤ",style: TextStyle(
+            color: Colors.lightBlue, fontWeight: FontWeight.w700)),
+      backgroundColor: Colors.white,
+      iconTheme: IconThemeData(color: Colors.lightBlue),
+    ),
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.topCenter,
@@ -413,6 +416,7 @@ class OnePage extends StatelessWidget {
                       child: Column(
                         children: <Widget>[
                           Container(
+                            color: Colors.yellow,
                             width: 100.0,
                             alignment: Alignment.center,
                             child: const Text(
