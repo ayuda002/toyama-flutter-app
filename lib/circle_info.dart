@@ -121,7 +121,7 @@ class Circle extends StatelessWidget {
         children: [
           Container(
             child: const Text(
-              "1.学生会 兼 大学祭実行委員会",
+              "1.学生会  大学祭実行委員会",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
