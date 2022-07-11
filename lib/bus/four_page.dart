@@ -5,8 +5,9 @@ class FourPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("射水キャンパス発着運行ダイヤ",style: TextStyle(
-            color: Colors.lightBlue, fontWeight: FontWeight.w700)),
+        title: const Text("射水キャンパス発着運行ダイヤ",
+            style: TextStyle(
+                color: Colors.lightBlue, fontWeight: FontWeight.w700)),
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.lightBlue),
       ),
@@ -584,35 +585,49 @@ class FourPage extends StatelessWidget {
                   ]),
                 ],
               ),
-              RichText(
-                text: const TextSpan(
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                  children: [
-                    TextSpan(
-                        text: "黄色",
-                        style: TextStyle(backgroundColor: Colors.yellow)),
-                    TextSpan(text: "は月曜・木曜(前期だけかも)・金曜のみ運行"),
-                  ],
+              Container(
+                padding: const EdgeInsets.only(top: 5),
+                child: SizedBox(
+                  width: 1000.0,
+                  child: Card(
+                    child: Container(
+                      color: Colors.yellow[100],
+                      child: Column(children: <Widget>[
+                        Text('黄色',style: TextStyle(color: Colors.yellow[900],fontSize: 20,fontWeight: FontWeight.w600),),
+                        const Text('月曜・木曜(前期だけかも)・金曜のみ運行',style: TextStyle(fontSize: 18)),
+                      ],)
+                    ),
+                  ),
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(bottom: 5),
-                child: Column(children: const <Widget>[
-                  Text(
-                    "最新の運行状況はWebClassで確認してください",
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                padding: const EdgeInsets.only(top: 5),
+                child: SizedBox(
+                  width: 1000.0,
+                  child: Card(
+                    child: Container(
+                      color: Colors.lightGreen[100],
+                      child: Column(children: <Widget>[
+                        Text('緑色',style: TextStyle(color: Colors.lightGreen[800],fontSize: 20,fontWeight: FontWeight.w600),),
+                        const Text('射水市コミュニティバスのため最新の運行状況についてはHPを確認ください',style: TextStyle(fontSize: 18),textAlign: TextAlign.center,),
+                      ],)
+                    ),
                   ),
-                ]),
+                ),
               ),
-              RichText(
-                text: const TextSpan(
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                  children: [
-                    TextSpan(
-                        text: "緑色",
-                        style: TextStyle(backgroundColor: Colors.lightGreenAccent)),
-                    TextSpan(text: "は射水市コミュニティバスのため最新の運行状況についてはHPを確認ください"),
-                  ],
+              Container(
+                padding: const EdgeInsets.only(top: 5),
+                child: SizedBox(
+                  width: 1000.0,
+                  child: Card(
+                    child: Container(
+                      color: Colors.grey[100],
+                      child: const Text("最新の運行状況はWebClassで確認してください",
+                        style: TextStyle(fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],

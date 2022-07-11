@@ -452,25 +452,35 @@ class OnePage extends StatelessWidget {
                   ]),
                 ],
               ),
-              RichText(
-                text: const TextSpan(
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                  children: [
-                    TextSpan(
-                        text: "黄色",
-                        style: TextStyle(backgroundColor: Colors.yellow)),
-                    TextSpan(text: "は月曜・木曜(前期だけかも)・金曜のみ運行"),
-                  ],
+              Container(
+                padding: const EdgeInsets.only(top: 5),
+                child: SizedBox(
+                  width: 1000.0,
+                  child: Card(
+                    child: Container(
+                        color: Colors.yellow[100],
+                        child: Column(children: <Widget>[
+                          Text('黄色',style: TextStyle(color: Colors.yellow[900],fontSize: 20,fontWeight: FontWeight.w600),),
+                          const Text('月曜・木曜(前期だけかも)・金曜のみ運行',style: TextStyle(fontSize: 18)),
+                        ],)
+                    ),
+                  ),
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(bottom: 5),
-                child: Column(children: const <Widget>[
-                  Text(
-                    "最新の運行状況はWebClassで確認してください",
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                padding: const EdgeInsets.only(top: 5),
+                child: SizedBox(
+                  width: 1000.0,
+                  child: Card(
+                    child: Container(
+                      color: Colors.grey[100],
+                      child: const Text("最新の運行状況はWebClassで確認してください",
+                        style: TextStyle(fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
-                ]),
+                ),
               ),
             ],
           ),
