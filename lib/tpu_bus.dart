@@ -116,9 +116,10 @@ class _TpuBusState extends State<TpuBus> {
                 ],
               ),
               Container(
-                margin: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(10),
                 child: SizedBox(
                   width: 350,
+                  height:40,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith(
@@ -132,7 +133,7 @@ class _TpuBusState extends State<TpuBus> {
                     ),
                     child: const Text("①富山キャンパス→射水キャンパス",
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w700)),
+                            fontSize: 18, fontWeight: FontWeight.w700,)),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -143,9 +144,10 @@ class _TpuBusState extends State<TpuBus> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(10),
                 child: SizedBox(
                   width: 350,
+                  height:40,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith(
@@ -170,9 +172,10 @@ class _TpuBusState extends State<TpuBus> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(10),
                 child: SizedBox(
                   width: 350,
+                  height:40,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith(
@@ -197,9 +200,10 @@ class _TpuBusState extends State<TpuBus> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(5),
+                margin: const EdgeInsets.all(10),
                 child: SizedBox(
                   width: 350,
+                  height:40,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith(
