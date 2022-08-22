@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Top(),
     App(),
     Container(
-      child: Text('Favorite'),
+      child: Text('Coming Soon'),
       alignment: Alignment.center,
       color: Colors.pink.withOpacity(0.5),
     ),

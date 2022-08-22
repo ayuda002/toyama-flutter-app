@@ -121,11 +121,11 @@ class _TopState extends State<Top> {
               style: TextStyle(
                   color: Colors.lightBlue, fontWeight: FontWeight.w700)),
           centerTitle: true,
-          leading: const Icon(Icons.menu, color: Colors.lightBlue),
-          actions: const [
-            Icon(Icons.add, color: Colors.lightBlue),
-            Icon(Icons.done, color: Colors.lightBlue),
-          ],
+          // leading: const Icon(Icons.menu, color: Colors.lightBlue),
+          // actions: const [
+          //   Icon(Icons.add, color: Colors.lightBlue),
+          //   Icon(Icons.done, color: Colors.lightBlue),
+          // ],
         ),
         body: Center(
           child: SingleChildScrollView(
