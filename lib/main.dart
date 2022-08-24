@@ -2,8 +2,60 @@ import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'top.dart';
 import 'app.dart';
+import "package:twitter_api_v2/twitter_api_v2.dart" as v2;
 
-void main() {
+// var tweets_array = [];
+List<String> tweets_array_ramen = <String>[];
+List<String> tweets_array_sushi = <String>[];
+
+void main() async{
+  final twitter = v2.TwitterApi(
+    bearerToken:
+    'AAAAAAAAAAAAAAAAAAAAAD3kfAEAAAAAFNrRj0hxLHMqrswsUQE%2BJjU5Fr0%3DmplapyYmh30X87nIeqJXFiLYGs26j2thRD3Gphi0iHtTbjmm4x',
+    oauthTokens: v2.OAuthTokens(
+      consumerKey: 'QVTBczYqBnlFgbKgvGim3q7dK',
+      consumerSecret: 'PtdtJaVRm0ppAargOFFwZNIJck1I8MftPjBaPOOBPm0THP6mOp',
+      accessToken: '1519597618858397696-lhbS2fm0nAlI9aqDdlzcVOZ6fWn0Z0',
+      accessTokenSecret: 'CEdTB9d8DJRx8AEw0Wkn5PARcRmHBUp0YJBIAfaJFeIos',
+    ),
+  );
+  try {
+    // ラーメンに関するツイート取得
+    final me = await twitter.usersService.lookupMe();
+    // 検索クエリにはハッシュタグも使用できます。
+    final tweets = await twitter.tweetsService.searchRecent(
+      query: '#県大グルメラーメン',
+      maxResults: 10,
+    );
+
+    // tweets_array_ramenに5件のツイート文章を格納
+    for (var i = 0; i < 5; i++) {
+      // print(tweets.data[i].text);
+      print(i);
+      tweets_array_ramen.add(tweets.data[i].text.toString());
+      print(tweets_array_ramen[i]);
+    }
+
+    // 寿司に関するツイート取得
+    final me2 = await twitter.usersService.lookupMe();
+    // 検索クエリにはハッシュタグも使用できます。
+    final tweets2 = await twitter.tweetsService.searchRecent(
+      query: '#県大グルメ寿司',
+      maxResults: 10,
+    );
+
+    // tweets_array_sushiに5件のツイート文章を格納
+    for (var i = 0; i < 5; i++) {
+      // print(tweets.data[i].text);
+      print(i);
+      tweets_array_sushi.add(tweets2.data[i].text.toString());
+      print(tweets_array_sushi[i]);
+    }
+
+  } on v2.TwitterException catch (e) {
+    // 例外オブジェクトには例外発生時のHTTPレスポンスが格納されています。
+    print(e.response.headers);
+  }
   runApp(const MyApp());
 }
 
@@ -60,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var _pages = <Widget>[
     Top(),
-    App(),
+    App(tweets_array_ramen[0],tweets_array_ramen[1],tweets_array_ramen[2],tweets_array_ramen[3],tweets_array_ramen[4]),
     Container(
       child: Text('Favorite'),
       alignment: Alignment.center,
