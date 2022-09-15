@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
   @override
   State<Profile> createState() => _ProfileState();
+}
+
+void createdb() async {
+  final Future database = openDatabase(
+    join(await getDatabasesPath(), 'note_database.db'),
+    onCreate: (db, version) {
+      return db.execute(
+        "CREATE TABLE note(id INTEGER PRIMARY KEY, text TEXT, priority INTEGER)",
+      );
+    },
+    version: 1,
+  );
 }
 
 class _ProfileState extends State<Profile> {

@@ -207,7 +207,15 @@ class _TopState extends State<Top> {
                               shape: CircleBorder(),
                               padding: EdgeInsets.all(20),
                             ),
-                            onPressed: () {},
+                            onPressed: () async {
+                              const url =
+                                  "https://www.instagram.com/polygon_tpu/";
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
                             child: Icon(FontAwesomeIcons.instagram),
                           ),
                         ),
