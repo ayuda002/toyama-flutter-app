@@ -125,14 +125,6 @@ class _AppState extends State<App> {
             Container(
               margin: const EdgeInsets.all(10),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _button(Icons.map_outlined, Colors.redAccent, "Map"),
-                _button(Icons.map_outlined, Colors.redAccent, "Map"),
-                _button(Icons.map_outlined, Colors.redAccent, "Map")
-              ],
-            )
           ],
         ),
       ),

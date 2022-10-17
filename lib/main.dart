@@ -32,8 +32,10 @@ void main() async{
     for (var i = 0; i < 5; i++) {
       // print(tweets.data[i].text);
       print(i);
-      tweets_array_ramen.add(tweets.data[i].text.toString());
-      print(tweets_array_ramen[i]);
+      if(tweets != null) {
+        tweets_array_ramen.add(tweets.data[i].text.toString());
+        print(tweets_array_ramen[i]);
+      }
     }
 
     // 寿司に関するツイート取得
@@ -48,8 +50,10 @@ void main() async{
     for (var i = 0; i < 5; i++) {
       // print(tweets.data[i].text);
       print(i);
+      if(tweets2 != null){
       tweets_array_sushi.add(tweets2.data[i].text.toString());
       print(tweets_array_sushi[i]);
+      }
     }
 
   } on v2.TwitterException catch (e) {
@@ -112,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var _pages = <Widget>[
     Top(),
-    App(tweets_array_ramen[0],tweets_array_ramen[1],tweets_array_ramen[2],tweets_array_ramen[3],tweets_array_ramen[4]),
+    // App(tweets_array_ramen[0],tweets_array_ramen[1],tweets_array_ramen[2],tweets_array_ramen[3],tweets_array_ramen[4]),
     Container(
       child: Text('Coming Soon'),
       alignment: Alignment.center,

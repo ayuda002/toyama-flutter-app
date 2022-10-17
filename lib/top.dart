@@ -8,6 +8,7 @@ import 'test.dart';
 import 'polygon.dart';
 import 'profile.dart';
 import 'question.dart';
+import 'newinfo.dart';
 
 class Top extends StatefulWidget {
   const Top({Key? key}) : super(key: key);
@@ -133,33 +134,44 @@ class _TopState extends State<Top> {
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: Image.asset('images/polygon.png'),
-                  // margin: const EdgeInsets.only(bottom: 20),
+                  // width: MediaQuery.of(context).size.width*5 ,
+                    child: Image.asset('images/polygon.png')
+                  // margin: const EdgeInsets.only(top: 0),
                 ),
-                Card(
-                  child: Column(
-                    children: const [
-                      ListTile(
-                        leading: Icon(Icons.add),
-                        title: Text('Pick UP'),
-                        subtitle: Text(
-                          "授業料免除申請",
-                          style: TextStyle(
-                              fontSize: 20,
-                              // fontWeight: FontWeight.w700,
-                              color: Colors.white),
+                GestureDetector(
+                  onTap: () async {
+                    const url =
+                        "https://tpuwcwebsv.pu-toyama.ac.jp/webclass/login.php";
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Card(
+                    child: Column(
+                      children: const [
+                        ListTile(
+                          leading: Icon(Icons.account_circle,color: Colors.white),
+                          title: Text('WebClass',style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,color: Colors.white),),
+                          // subtitle: Text(
+                          //   "DXC Meet Up #001 -XR-",
+                          //   style: TextStyle(
+                          //       fontSize: 20,
+                          //       // fontWeight: FontWeight.w700,
+                          //       color: Colors.white),
+                          // ),
                         ),
-                      ),
-                    ],
-                  ),
-                  color: Colors.lightBlueAccent, // Card自体の色
-                  margin: const EdgeInsets.all(15),
-                  elevation: 2, // 影の離れ具合
-                  shadowColor: Colors.black, // 影の色
-                  shape: RoundedRectangleBorder(
-                    // 枠線を変更できる
-                    borderRadius: BorderRadius.circular(10),
+                      ],
+                    ),
+                    color: Colors.lightBlueAccent, // Card自体の色
+                    margin: const EdgeInsets.all(15),
+                    elevation: 2, // 影の離れ具合
+                    shadowColor: Colors.black, // 影の色
+                    shape: RoundedRectangleBorder(
+                      // 枠線を変更できる
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 Column(
@@ -193,7 +205,7 @@ class _TopState extends State<Top> {
                       // 外側の余白（マージン）
                       margin: EdgeInsets.all(4),
                     ),
-                    _intro('イベント紹介', Icons.sunny, Circle()),
+                    _intro('DX教育研究センター新着情報', Icons.sunny, NewInfo()),
                     //SNSボタン
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
